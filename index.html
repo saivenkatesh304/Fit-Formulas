@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitFormula</title>
+    <style>
+        /* Reset and basic styles */
+        body {
+            background-color: black;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #bd5608; /* Change hover color */
+        }
+
+        /* Greeting in nav */
+        .greeting {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #fff;
+        }
+
+        /* Sections */
+        .section {
+            padding: 20px;
+            margin: 20px;
+            background-color: burlywood; /* White background for sections */
+            border: 2px solid #333; /* Border around sections */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+        }
+
+        .section h2 {
+            text-align: center; /* Center align headings */
+            margin-bottom: 20px; /* Space below headings */
+        }
+
+        .section p, .section ul {
+            text-align: left; /* Left align text */
+            line-height: 1.6; /* Line height for readability */
+        }
+
+        /* Introduction and Muscles section specific styles */
+        #introduction, #muscles {
+            background-color: burlywood;
+            color: black;
+        }
+
+        /* Individual muscle sections */
+        .section div {
+            text-align: center; /* Center align content within each muscle section */
+        }
+
+        /* Image containers */
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Gap between images */
+        }
+
+        .image-container a {
+            display: block;
+        }
+
+        .image-container img {
+            height: 200px; /* Set a fixed height for images */
+            border: 5px solid #333; /* Border around images */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05); /* Scale up slightly on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+        }
+
+        /* Remove underline from links within image containers */
+        .image-container a {
+            text-decoration: none;
+            color: inherit; /* Inherit text color */
+        }
+
+        /* Styles for individual muscle sections */
+        #chest, #shoulders, #back, #biceps, #triceps, #legs, #abs {
+            text-align: center; /* Center align content */
+            border: 2px solid #333; /* Outline box */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+            padding: 20px; /* Padding inside the container */
+            background-color: burlywood; /* Background color */
+        }
+
+        /* Image container within muscle sections */
+        #chest .image-container,
+        #shoulders .image-container,
+        #back .image-container,
+        #biceps .image-container,
+        #triceps .image-container,
+        #legs .image-container,
+        #abs .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* Adjust the gap between images */
+        }
+
+        /* Images within muscle sections */
+        #chest .image-container img,
+        #shoulders .image-container img,
+        #back .image-container img,
+        #biceps .image-container img,
+        #triceps .image-container img,
+        #legs .image-container img,
+        #abs .image-container img {
+            display: block;
+            height: 200px; /* Set a fixed height for images */
+            border: 5px solid #333; /* Border around images */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+        }
+
+        #chest .image-container img:hover,
+        #shoulders .image-container img:hover,
+        #back .image-container img:hover,
+        #biceps .image-container img:hover,
+        #triceps .image-container img:hover,
+        #legs .image-container img:hover,
+        #abs .image-container img:hover {
+            transform: scale(1.05); /* Scale up slightly on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+        }
+
+        /* Remove underline from headings that are links */
+        .no-underline {
+            text-decoration: none;
+            color: inherit; /* Inherit text color */
+        }
+        /* Female Workouts Section */
+.female-workouts {
+    text-align: center; /* Center align content */
+    background-color: #f8f8f8; /* Light background color */
+    padding: 20px;
+    margin: 20px;
+    border: 2px solid #333; /* Border around the section */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #bd5608; /* Button color */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #8a3d01; /* Darker color on hover */
+    transform: scale(1.05); /* Slight scale up on hover */
+}
+
+#feedback {
+    padding: 20px;
+    background-color: burlywood;
+    border-top: 1px solid #ddd;
+    max-width: 600px; /* Increased the maximum width of the form */
+    margin: 0 auto; /* Center the form */
+}
+
+#feedback h2 {
+    margin-top: 0;
+    font-size: 28px; /* Adjust the heading size */
+}
+
+#feedback form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Add more space between form elements */
+}
+
+#feedback label {
+    font-size: 16px; /* Adjust label font size */
+}
+
+#feedback input, #feedback textarea {
+    padding: 10px; /* Increase padding */
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Adjust input font size */
+}
+
+#feedback textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    min-height: 120px; /* Increased minimum height for textarea */
+}
+
+#feedback button {
+    margin-top: 10px;
+    padding: 10px 20px; /* Increase button padding */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust button font size */
+}
+
+#feedback button:hover {
+    background-color: #218838;
+}
+
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <h1>FitFormula</h1>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#muscles">Muscles</a></li>
+        </ul>
+        <p id="greeting" class="greeting"></p>
+    </nav>
+    
+    <section id="home" class="section">
+        <!-- No need for a separate greeting here since it's in the nav -->
+         <h2>Journey to a healthier, fitter life begins here</h2>
+    </section>
+    
+    <section id="introduction" class="section intro">
+        <h2>Introduction</h2>
+        <p>FitFormula Gym is dedicated to helping you achieve your fitness goals. Whether you're looking to build muscle, lose weight, or maintain a healthy lifestyle, we have the facilities and expertise to support you.</p>
+        <h3>Uses</h3>
+        <p>Our gym provides a wide range of equipment and classes to cater to all fitness levels. From cardio machines to free weights, we have everything you need to get started on your fitness journey.</p>
+        <h3>Benefits</h3>
+        <ul>
+            <li>Improved physical health</li>
+            <li>Enhanced mental well-being</li>
+            <li>Access to professional trainers</li>
+            <li>A supportive community</li>
+        </ul>
+    </section>
+    
+    <section id="muscles" class="section muscles">
+        <h2>Muscles</h2>
+        <p>At FitFormula, we focus on holistic muscle development. Our trainers will guide you through exercises that target key muscle groups, ensuring balanced and effective workouts.</p>
+    </section>
+    
+    <!-- Section for Chest -->
+    <div id="chest" class="section chest">
+        <a href="chest.html" class="no-underline"><h2>Chest</h2></a>
+        <div class="image-container">
+            <a href="chest.html"><img src="chest1.jpg" height="200" class="chestimg" alt="Chest Image 1"></a>
+            <a href="chest.html"><img src="chest2.jpg" height="200" class="chestimg" alt="Chest Image 2"></a>
+            <a href="chest.html"><img src="chest3.jpg" height="200" class="chestimg" alt="Chest Image 3"></a>
+        </div>
+    </div>
+    
+    <!-- Section for Shoulders -->
+    <div id="shoulders" class="section shoulders">
+        <a href="shoulders.html" class="no-underline"><h2>Shoulders</h2></a>
+        <div class="image-container">
+            <a href="shoulders.html"><img src="shoulder1.jpg" height="200" class="shouldersimg" alt="Shoulders Image 1"></a>
+            <a href="shoulders.html"><img src="shoulder2.jpg" height="200" class="shouldersimg" alt="Shoulders Image 2"></a>
+            <a href="shoulders.html"><img src="shoulder3.jpg" height="200" class="shouldersimg" alt="Shoulders Image 3"></a>
+        </div>
+    </div>
+    
+    <!-- Section for Back -->
+    <div id="back" class="section back">
+        <a href="back.html" class="no-underline"><h2>Back</h2></a>
+        <div class="image-container">
+            <a href="back.html"><img src="back1.png" height="200" class="backimg" alt="Back Image 1"></a>
+            <a href="back.html"><img src="back2.png" height="200" class="backimg" alt="Back Image 2"></a>
+            <a href="back.html"><img src="back3.jpg" height="200" class="backimg" alt="Back Image 3"></a>
+        </div>
+    </div>
+    
+    <!-- Section for Biceps -->
+    <div id="biceps" class="section biceps">
+        <a href="bicep.html" class="no-underline"><h2>Biceps</h2></a>
+        <div class="image-container">
+            <a href="bicep.html"><img src="bicep1.jpg" height="200" class="bicepsimg" alt="Biceps Image 1"></a>
+            <a href="bicep.html"><img src="bicep2.jpg" height="200" class="bicepsimg" alt="Biceps Image 2"></a>
+            <a href="bicep.html"><img src="bicep3.jpg" height="200" class="bicepsimg" alt="Biceps Image 3"></a>
+        </div>
+    </div>
+    
+    <!-- Section for Triceps -->
+    <div id="triceps" class="section triceps">
+        <a href="triceps.html" class="no-underline"><h2>Triceps</h2></a>
+        <div class="image-container">
+            <a href="triceps.html"><img src="triceps.jpg" height="200" class="tricepsimg" alt="Triceps Image 1"></a>
+            <a href="triceps.html"><img src="triceps2.jpg" height="200" class="tricepsimg" alt="Triceps Image 2"></a>
+            <a href="triceps.html"><img src="triceps3.jpg" height="200" class="tricepsimg" alt="Triceps Image 3"></a>
+        </div>
+    </div>
+    
+    <!-- Section for Legs -->
+    <div id="legs" class="section legs">
+        <a href="legs.html" class="no-underline"><h2>Legs</h2></a>
+        <div class="image-container">
+            <a href="legs.html"><img src="legs1.jpg" height="200" class="legsimg" alt="Legs Image 1"></a>
+            <a href="legs.html"><img src="legs2.jpg" height="200" class="legsimg" alt="Legs Image 2"></a>
+            <a href="legs.html"><img src="legs3.jpg" height="200" class="legsimg" alt="Legs Image 3"></a>
+        </div>
+    </div>
+    
+    <!-- Section for Abs -->
+    <div id="abs" class="section abs">
+        <a href="abs.html" class="no-underline"><h2>Abs</h2></a>
+        <div class="image-container">
+            <a href="abs.html"><img src="abs1.jpg" height="200" class="absimg" alt="Abs Image 1"></a>
+            <a href="abs.html"><img src="abs2.jpg" height="200" class="absimg" alt="Abs Image 2"></a>
+            <a href="abs.html"><img src="abs3.jpg" height="200" class="absimg" alt="Abs Image 3"></a>
+        </div>
+    </div>
+
+    <section id="female-workouts" class="section female-workouts">
+        <h2>For Accessing Female Workouts</h2>
+        <h3>Click the button below to explore our female workout routines and resources.</h3>
+        <a href="female.html" class="btn">Explore Female Workouts</a>
+    </section>
+
+    <!-- Existing sections -->
+
+<!-- Feedback Section -->
+<section id="feedback">
+    <h2>Feedback</h2>
+    <form id="feedbackForm" action="/send-feedback" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit">Submit Feedback</button>
+    </form>
+</section>
+
+
+    <script>
+        // Function to get URL parameters
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                name: params.get('name')
+            };
+        }
+
+        // Function to display the name if present
+        function displayGreeting() {
+            const queryParams = getQueryParams();
+            const name = queryParams.name;
+            if (name) {
+                const greetingElement = document.getElementById('greeting');
+                greetingElement.textContent = `HI ${name}`;
+            }
+        }
+
+        // Run the function when the page loads
+        window.onload = displayGreeting;
+    </script>
+</body>
+</html>
