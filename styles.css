@@ -1,0 +1,173 @@
+/* Reset and basic styles */
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #bd5608; /* Change hover color */
+}
+
+/* Sections */
+.section {
+    padding: 20px;
+    margin: 20px;
+    background-color: burlywood;/* White background for sections */
+    border: 2px solid #333; /* Border around sections */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+}
+
+.section h2 {
+    text-align: center; /* Center align headings */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+.section p, .section ul {
+    text-align: left; /* Left align text */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Introduction and Muscles section specific styles */
+#introduction {
+    background-color:burlywood;
+    color: black;
+}
+
+#muscles {
+    background-color: burlywood;
+    color: black;
+}
+
+/* Individual muscle sections */
+.section div {
+    text-align: center; /* Center align content within each muscle section */
+}
+
+/* Image containers */
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Gap between images */
+}
+
+.image-container a {
+    display: block;
+}
+
+.image-container img {
+    height: 200px; /* Set a fixed height for images */
+    border: 5px solid #333; /* Border around images */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+/* Remove underline from links within image containers */
+.image-container a {
+    text-decoration: none;
+    color: inherit; /* Inherit text color */
+}
+
+/* Styles for individual muscle sections */
+#chest, #shoulders, #back, #biceps, #triceps, #legs, #abs {
+    text-align: center; /* Center align content */
+    border: 2px solid #333; /* Outline box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for a 3D effect */
+    padding: 20px; /* Padding inside the container */
+    background-color: burlywood; /* Background color */
+}
+
+/* Image container within muscle sections */
+#chest .image-container,
+#shoulders .image-container,
+#back .image-container,
+#biceps .image-container,
+#triceps .image-container,
+#legs .image-container,
+#abs .image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between images */
+}
+
+/* Images within muscle sections */
+#chest .image-container img,
+#shoulders .image-container img,
+#back .image-container img,
+#biceps .image-container img,
+#triceps .image-container img,
+#legs .image-container img,
+#abs .image-container img {
+    display: block;
+    height: 200px; /* Set a fixed height for images */
+    border: 5px solid #333; /* Border around images */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for a 3D effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effects */
+}
+
+#chest .image-container img:hover,
+#shoulders .image-container img:hover,
+#back .image-container img:hover,
+#biceps .image-container img:hover,
+#triceps .image-container img:hover,
+#legs .image-container img:hover,
+#abs .image-container img:hover {
+    transform: scale(1.05); /* Scale up slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+/* Remove underline from headings that are links */
+.no-underline {
+    text-decoration: none;
+    color: inherit; /* Inherit text color */
+}
+
+#RegisterNow{
+    color: #fff;
+    background: #7d2ae8;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
